@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import NewsItem from './NewsItem';
 import { getAllNews } from '../APIFunc/apiFunc';
+import './News.css';
 
 
 const NewsList = () => {
