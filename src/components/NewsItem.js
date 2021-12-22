@@ -10,8 +10,8 @@ const NewsItem = ({value}) => {
             </div>
             <div className='newsBody'>
                 <h1>{value.title}</h1>
-                <p>{value.contents}</p>
-                <small>{value.day}</small>
+                <p>{value.description}</p>
+                <small>{value.author? value.author : 'unknown'}</small>
             </div>
             
         </div>

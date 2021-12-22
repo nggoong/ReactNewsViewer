@@ -4,30 +4,17 @@ import { getAllNews } from '../APIFunc/apiFunc';
 
 
 const NewsList = () => {
-    const [news, setNews] = useState([{
-        title:'게시글 제목',
-        contents:'게시글 내용',
-        day:'게시글 날짜'
-    },
-    {
-        title:'게시글 제목',
-        contents:'게시글 내용',
-        day:'게시글 날짜'
-    },
-    {
-        title:'게시글 제목',
-        contents:'게시글 내용',
-        day:'게시글 날짜'
-    },
-    {
-        title:'게시글 제목',
-        contents:'게시글 내용',
-        day:'게시글 날짜'
-    }]);
+    const [news, setNews] = useState([]);
 
     useEffect(()=>{
-        getAllNews().then((res)=> {
-            console.log(res);
+        getAllNews()
+        .then((res)=> {
+            console.log(res.data.articles);
+            setNews(res.data.articles);
+        })
+        .catch((e)=> {
+            console.log(e);
+            alert('불러오기 실패');
         })
     }, [])
 
