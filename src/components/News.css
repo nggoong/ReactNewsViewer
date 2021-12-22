@@ -1,8 +1,10 @@
 .NewsItem {
     height:40vh;
     display: flex;
+    justify-content: flex-start;
     align-items: center;
     cursor:pointer;
+    padding:0 30px;
 }
 .NewsItem:nth-child(even) {
     background:lightgray;
@@ -12,7 +14,12 @@
     line-height: 1.8;
 }
 
+.NewsItem:hover .newsBody{
+    text-decoration: underline;
+}
+
 .NewsItem:hover h1 {
     color:red;
     text-decoration: underline;
 }
+

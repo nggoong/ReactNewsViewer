@@ -19,10 +19,11 @@ const NewsList = () => {
         })
     }, [])
 
+    
     return(
         <div className='newsList'>
             {news.map(
-                (value) => {return(<NewsItem value={value}></NewsItem>)}
+                (value, index) => {return(<NewsItem value={value} key={index}></NewsItem>)}
             )}
 
             

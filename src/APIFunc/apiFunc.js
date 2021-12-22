@@ -12,6 +12,8 @@ const getAllNews = () => {
 const getChosedNews = (category) => {
     const url = `https://newsapi.org/v2/top-headlines?country=kr&category=${category}&apiKey=${key}`;
 
+    return axios.get(url);
+
 }
 
 
