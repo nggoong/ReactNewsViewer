@@ -1,5 +1,6 @@
-import React, {useState} from 'react';
+import React, { useState, useEffect } from 'react';
 import NewsItem from './NewsItem';
+import { getAllNews } from '../APIFunc/apiFunc';
 
 
 const NewsList = () => {
@@ -23,6 +24,13 @@ const NewsList = () => {
         contents:'게시글 내용',
         day:'게시글 날짜'
     }]);
+
+    useEffect(()=>{
+        getAllNews().then((res)=> {
+            console.log(res);
+        })
+    }, [])
+
     return(
         <div className='newsList'>
             {news.map(
