@@ -3,7 +3,7 @@ import './News.css';
 
 const NewsItem = ({value}) => {
     
-    const clickHandler = useCallback((e)=> {
+    const clickHandler = useCallback(()=> {
         window.open(value.url);
     }, [value])
 

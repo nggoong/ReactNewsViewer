@@ -1,11 +1,11 @@
 import './Header.css';
 
-const HeaderItem = ({ item }) => {
+const HeaderItem = ({ item, category, changeCategory }) => {
     
 
 
     return(
-        <a className='header-links-item' href='#'>{item}</a>
+        <a className='header-links-item' href='#' onClick={()=>{changeCategory(category)}}>{item}</a>
     )
 }
 

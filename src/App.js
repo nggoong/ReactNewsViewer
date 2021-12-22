@@ -1,11 +1,20 @@
 import './App.css';
 import NewsList from './components/NewsList';
 import Header from './components/Header';
+import React, { useState, useCallback } from 'react';
 function App() {
+  
+  const [category, setCategory] = useState('headline');
+
+  const changeCategory = useCallback((category)=> {
+    console.log('gi')
+    setCategory(category);
+  }, [])
+
   return (
     <>
-    <Header></Header>
-    <NewsList/>
+    <Header changeCategory={changeCategory}></Header>
+    <NewsList category={category} />
     </>
   );
 }
