@@ -1,0 +1,39 @@
+a {
+    text-decoration: none;
+    color:black;
+}
+
+a:hover {
+    color:orange;
+}
+
+.header {
+    border-bottom:lightgray 1px solid;
+}
+
+.header-links {
+    display:flex;
+    justify-content: space-around;
+    height: 80px;
+    align-items: center;
+    max-width:1200px;
+    margin:0 auto;
+}
+
+.header-links-item {
+    font-weight: bold;
+}
+.header-user-control {
+    display: flex;
+    margin:0 auto;
+}
+
+
+.home-btn {
+    flex:1;
+}
+
+.user-control {
+    display:flex;
+    justify-content: space-around;
+}
