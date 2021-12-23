@@ -1,0 +1,45 @@
+.blur-container {
+    position: fixed;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    top:0;
+    left:0;
+    height:100vh;
+    width:100vw;
+    background: rgba(192,192,192,0.6);
+}
+
+.signup-templete {
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width:40%;
+    height:30%;
+    background: white;
+    border-radius: 20px;
+    
+}
+
+.signup-templete input {
+    width:30%;
+    height: 10%;
+    border-radius: 10px;
+}
+
+.btn-container {
+    width:70%;
+    height:20%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.btn-container > button {
+    color:white;
+    height:70%;
+    width:30%;
+    background: blue;
+    border-radius: 5px;
+    
+}
