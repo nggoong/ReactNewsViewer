@@ -15,11 +15,17 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    width:40%;
-    height:30%;
+    width:50%;
+    height:50%;
+    min-width:150px;
+    min-height:100px;
     background: white;
     border-radius: 20px;
     
+}
+
+.signup-templete  h1 {
+    user-select: none;
 }
 
 .signup-templete input {
@@ -41,5 +47,4 @@
     width:30%;
     background: blue;
     border-radius: 5px;
-    
 }

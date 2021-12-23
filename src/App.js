@@ -6,16 +6,21 @@ import SignUp from './components/SignUp';
 function App() {
   
   const [category, setCategory] = useState('headline');
+  const [modalBool, setModalBool] = useState(false);
 
   const changeCategory = useCallback((category)=> {
-    console.log('gi')
     setCategory(category);
   }, [])
 
+  const modalToggle = () => {
+    setModalBool((modalBool) => !modalBool);
+    console.log('heeloo')
+  }
+
   return (
     <>
-    <Header changeCategory={changeCategory}></Header>
-    <SignUp></SignUp>
+    <Header changeCategory={changeCategory} modalToggle={modalToggle}></Header>
+    {modalBool? <SignUp modalToggle={modalToggle}/>:null}
     <NewsList category={category} />
     </>
   );

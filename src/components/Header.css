@@ -37,6 +37,7 @@ a:hover {
     display: flex;
     max-width:1200px;
     margin:0 auto;
+    user-select: none;
 }
 
 .logo {
