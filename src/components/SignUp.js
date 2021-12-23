@@ -20,7 +20,11 @@ const SignUp = ({ modalToggle }) => {
 
     const clickHandler = (e) => {
         e.stopPropagation();
-        modalToggle();
+        if(e.target.className=='blur-container') {
+            modalToggle();
+            console.log(e.target);
+        }
+        else return;
     }
 
 
