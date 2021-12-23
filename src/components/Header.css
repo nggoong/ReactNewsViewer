@@ -34,6 +34,26 @@ a:hover {
 }
 
 .user-control {
+    display: flex;
+    max-width:1200px;
+    margin:0 auto;
+}
+
+.logo {
+    flex:1;
+    margin:0 auto;
+    padding-left:55px;
+}
+
+.user-control-btn {
     display:flex;
+    align-items: center;
     justify-content: space-around;
+    width:20%;
+    padding-right:35px;
+    cursor: pointer;
+}
+
+.user-control-btn p:hover {
+    color:orange;
 }

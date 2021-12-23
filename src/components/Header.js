@@ -13,6 +13,16 @@ const Header = ({changeCategory}) => {
                 <HeaderItem item={item} key={index} category={category[index]} changeCategory={changeCategory}></HeaderItem>
             )})}
             </div>
+            <div className='user-control'>
+                <div className='logo'>
+                    <h1>logo</h1>
+                </div>
+                <div className='user-control-btn'>
+                    <p>SIGN UP</p>
+                    <p>LOGIN</p>
+                    <p>INSTAGRAM</p>
+                </div>
+            </div>
         </div>
 
     )
