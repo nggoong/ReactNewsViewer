@@ -19,47 +19,70 @@ const NewsList = ({category}) => {
     //         alert('불러오기 실패');
     //     })
     // }, [])
+    const fetchAllData = async () => {
+        setLoading(true);
+        try {
+            const res = await getAllNews();
+            setNews(res.data.articles);
+        }
+        catch(e) {
+            console.log(e);
+        }
+        setLoading(false);
+    }
+
+    const fetchCategoryData = async () => {
+        setLoading(true);
+        try {
+            let res;
+            if(category == 'headline') {
+                res = await getAllNews();
+            }
+            else {
+                res = await getChosedNews(category);
+            }
+            setNews(res.data.articles);
+        }
+        catch(e) {
+            console.log(e);
+        }
+        setLoading(false);
+    }
+    
 
     useEffect(()=> {
-        const fetchData = async () => {
-            setLoading(true);
-            try {
-                const res = await getAllNews();
-                setNews(res.data.articles);
-            }
-            catch(e) {
-                console.log(e);
-            }
-            setLoading(false);
-        }
-        fetchData();
+        fetchAllData();
     }, []);
 
-
     useEffect(()=> {
-        console.log(category);
-        console.log('hihi');
-        if(category == 'headline'){
-            getAllNews()
-        .then((res)=> {
-            console.log(res.data.articles);
-            setNews(res.data.articles);
-        })
-        .catch((e)=> {
-            console.log(e);
-            alert('불러오기 실패');
-        })
-        }
-        else {
-            getChosedNews(category).then((res)=> {
-                setNews(res.data.articles);
-            }).catch((e)=> {
-                console.log(e);
-                alert('불러오기 실패');
-            })
-        } 
-        // category == 'headline'? getAllNews():getChosedNews(category);
+        fetchCategoryData();
     }, [category])
+
+
+    // useEffect(()=> {
+    //     console.log(category);
+    //     console.log('hihi');
+    //     if(category == 'headline'){
+    //         getAllNews()
+    //     .then((res)=> {
+    //         console.log(res.data.articles);
+    //         setNews(res.data.articles);
+    //     })
+    //     .catch((e)=> {
+    //         console.log(e);
+    //         alert('불러오기 실패');
+    //     })
+    //     }
+    //     else {
+    //         getChosedNews(category).then((res)=> {
+    //             setNews(res.data.articles);
+    //         }).catch((e)=> {
+    //             console.log(e);
+    //             alert('불러오기 실패');
+    //         })
+    //     } 
+    //     // category == 'headline'? getAllNews():getChosedNews(category);
+    // }, [category])
 
     if(loading) {
         return(
